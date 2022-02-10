@@ -387,7 +387,8 @@ The chart also facilitates the creation of TLS secrets for use with the Ingress 
 
 ### Use with ingress offloading SSL
 
-If your ingress controller has the SSL Termination, you can add the following env vars in `extraEnvVars`
+If your ingress controller has the SSL Termination, you should set `proxyAddressForwarding` to `true` or you should add the following env vars in `extraEnvVars`
+
 ```yaml
 - name: KEYCLOAK_PROXY_ADDRESS_FORWARDING
   value: "true"
@@ -404,6 +405,8 @@ This chart provides several ways to manage passwords:
 * Multiple existing secrets with all the passwords (via the `existingSecretPerPassword` parameter)
 
 Refer to the [chart documentation on managing passwords](https://docs.bitnami.com/kubernetes/apps/keycloak/configuration/manage-passwords/) for examples of each method.
+
+
 
 ## Troubleshooting
 
